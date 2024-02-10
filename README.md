@@ -1,7 +1,7 @@
 # Скрипты
 
 - Создание файлов (bloc, state, event, bloc_model)
-![](https://github.com/Tsiuryn/scripts/blob/main/util/create_bloc.gif)
+![](https://github.com/Tsiuryn/scripts/blob/main/app/assets/create_bloc.gif)
 
 
 - Конфиг VSCode
