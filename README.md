@@ -5,7 +5,7 @@
 
   - Выполнить код из терминала:
   
-    _dart run <path-to-file>_  (Пример: 'dart run g_class_serializable/start.dart')
+    dart run <path-to-file>  (Пример: 'dart run g_class_serializable/start.dart')
 
 - Конфиг VSCode
 ```
