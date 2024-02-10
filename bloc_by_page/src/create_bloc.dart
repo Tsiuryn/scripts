@@ -1,9 +1,8 @@
-
 import 'dart:io';
 
 import '../../app/logs.dart';
-import 'util/bloc_content.dart';
-import 'util/capitalize.dart';
+import '../../app/util/file_to_class_prefix.dart';
+import 'bloc_content.dart';
 
 void createBloc() {
   AppLogger.yellow('Пример: /Users/.../theme/dimensions.dart');
@@ -21,21 +20,12 @@ void createBloc() {
   final pathWithoutName = uri.path.replaceAll(dirtyFileName, '');
 
   final fileName = _getClearFileName(dirtyFileName);
-  final className = _parseFileNameToClassPrefix(fileName);
+  final className = parseFileNameToClassPrefix(fileName);
   _createFiles(
     pathWithoutName: pathWithoutName,
     fileName: fileName,
     className: className,
   );
-}
-
-String _parseFileNameToClassPrefix(String fileName) {
-  final parser = fileName.split('_');
-  var title = '';
-  for (var element in parser) {
-    title += element.capitalize();
-  }
-  return title;
 }
 
 String _getClearFileName(String fileName) {
