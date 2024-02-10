@@ -1,5 +1,7 @@
 # scripts
 
+## Create bloc
+![](https://github.com/Tsiuryn/scripts/blob/main/util/create_bloc.gif)
 
 
 Пример Hello красным: 
