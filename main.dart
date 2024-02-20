@@ -3,6 +3,7 @@ import 'dart:io';
 import 'api_class/src/create_api_class.dart';
 import 'bloc_by_page/src/create_bloc.dart';
 import 'clean_arch/src/generate_clean_arch.dart';
+import 'color_extension/src/create_color_extension.dart';
 import 'g_class_serializable/src/create_g_class.dart';
 
 void main() {
@@ -18,6 +19,8 @@ void main() {
       createApiClass();
     case 4:
       generateCleanArch();
+    case 5:
+      createColorExtension();
     case null:
     default:
       {
@@ -32,5 +35,6 @@ const _text = '''
 2. Создание примера g_class;
 3. Создание класса API retrofit;
 4. Создание слоев чистой архитектуры;
+5. Создание файла с классом расширения;
 Выберите нужную программу: 
 ''';
