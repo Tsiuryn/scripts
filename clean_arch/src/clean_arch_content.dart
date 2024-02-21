@@ -21,7 +21,7 @@ class ${className}UseCase
     extends UniFutureUseCase<${className}Entity, ${className}Entity> {
   final ${className}Gateway ${_classInstance}Gateway;
 
-  ActivationCorpopassUseCase({required this.corpopassCardGateway});
+  ${className}UseCase({required this.corpopassCardGateway});
 
   @override
   Future<${className}Entity> execute([${className}Entity? input]) {
