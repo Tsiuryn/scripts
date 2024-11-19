@@ -6,6 +6,8 @@ import 'clean_arch/src/generate_clean_arch.dart';
 import 'color_extension/src/create_color_extension.dart';
 import 'flutter_build/flutter_build_app.dart';
 import 'g_class_serializable/src/create_g_class.dart';
+import 'open_as/open_as_script.dart';
+import 'open_xcode/open_xcode_script.dart';
 
 void main() {
   stdout.write(_text);
@@ -24,6 +26,10 @@ void main() {
       createColorExtension();
     case 6:
       runFlutterBuild();
+    case 7:
+      openAndroidStudio();
+    case 8:
+      openXcodeProject();
     case null:
     default:
       {
@@ -40,5 +46,7 @@ const _text = '''
 4. Создание слоев чистой архитектуры;
 5. Создание файла с классом расширения;
 6. Генерация команды для сборки Batteryfly проекта;
+7. Открыть проект в Android Studio;
+8. Открыть проект в Xcode;
 Выберите нужную программу: 
 ''';
