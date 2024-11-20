@@ -7,6 +7,7 @@ import 'color_extension/src/create_color_extension.dart';
 import 'flutter_build/flutter_build_app.dart';
 import 'g_class_serializable/src/create_g_class.dart';
 import 'open_as/open_as_script.dart';
+import 'open_vs_code/open_vs_code_script.dart';
 import 'open_xcode/open_xcode_script.dart';
 
 void main() {
@@ -30,6 +31,8 @@ void main() {
       openAndroidStudio();
     case 8:
       openXcodeProject();
+    case 9:
+      openVSCodeProject();
     case null:
     default:
       {
@@ -48,5 +51,6 @@ const _text = '''
 6. Генерация команды для сборки Batteryfly проекта;
 7. Открыть проект в Android Studio;
 8. Открыть проект в Xcode;
+9. Открыть проект в VS Code;
 Выберите нужную программу: 
 ''';

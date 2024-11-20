@@ -3,7 +3,7 @@ import 'dart:io';
 import '../app/logs.dart';
 
 void openAndroidStudio() {
-  stdout.write('${AppLogger.redText('Пример: /Users/.../notification) \nПуть к папке проекта:')} ');
+  stdout.write('${AppLogger.greenText('Пример: /Users/.../notification) \nПуть к папке проекта:')} ');
   String projectPath = stdin.readLineSync()!;
 
   String androidStudioPath = '/Applications/Android Studio.app/Contents/MacOS/studio';

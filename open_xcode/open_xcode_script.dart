@@ -3,7 +3,7 @@ import 'dart:io';
 import '../app/logs.dart';
 
 void openXcodeProject() {
-  stdout.write('${AppLogger.redText('Пример: /Users/.../ios/Runner.xcworkspace) \nПуть к Runner.xcworkspace:')} ');
+  stdout.write('${AppLogger.greenText('Пример: /Users/.../ios/Runner.xcworkspace) \nПуть к Runner.xcworkspace:')} ');
   String projectPath = stdin.readLineSync()!;
 
   if (!File(projectPath).existsSync() && !Directory(projectPath).existsSync()) {
