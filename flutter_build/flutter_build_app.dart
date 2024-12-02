@@ -4,6 +4,10 @@ import '../app/logs.dart';
 
 const _reminder = 'Команда должна запускаться в директории репозитория проекта! \n';
 
+const _versionAppMes = '''Введи версию приложения и номер сборки (пример 1.0.0-1).
+Если нажать на enter, то версия приложения и номер сборки будут из pubspec.yaml 
+''';
+
 const _mobileText = '$_reminderВыбор мобильной платформы:\n'
     '1. Андроид appbundle\n'
     '2. Андроид apk\n'
@@ -113,6 +117,9 @@ void runFlutterBuild() async {
   String env = stdin.readLineSync()!;
   arguments.add(_getConfig(flavor, Environment.fromString(env)));
 
+  stdout.write('${AppLogger.blueText(_versionAppMes)} ');
+  arguments.add(_getAppVersion(stdin.readLineSync()!));
+
   final command = arguments.reduce((first, second) => '$first $second').replaceFirst('-c ', '');
   AppLogger.green(command);
   await _copyToClipboard(command);
@@ -140,6 +147,14 @@ String _getPssConfig(Environment env)=> switch(env){
     Environment.prod => '--dart-define-from-file=.configs/pss_prod.json',
     Environment.stage => '--dart-define-from-file=.configs/pss_stage.json',
   };
+
+String _getAppVersion(String readLine){
+  final source = readLine.split('-');
+  if(readLine.isEmpty || source.length < 2){
+    return '';
+  }
+  return '--build-name=${source.first} --build-number=${source.last}';
+}
 
 Future _copyToClipboard(String text) async{
   try {
